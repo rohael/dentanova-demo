@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* High-end Swiss clinical micro-elevation & transitions */
+  .card-subtle {
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  }
+  .card-subtle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -3px rgba(15, 23, 42, 0.07), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
+  }
+
+  .btn-subtle {
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease;
+  }
+  .btn-subtle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px -2px rgba(27, 100, 165, 0.22);
+  }
+  .btn-subtle:active {
+    transform: translateY(0);
+  }
+}
+
