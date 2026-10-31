@@ -34,7 +34,7 @@ const PRESET_AVATARS = [
   },
   {
     label: 'Żeński 1 (Endodoncja)',
-    url: 'https://images.unsplash.com/photo-1594824813589-980b1e427771?w=400&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&auto=format&fit=crop&q=80',
   },
   {
     label: 'Żeński 2 (Ortodonta)',

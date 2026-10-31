@@ -43,7 +43,7 @@ const PRESET_DENTAL_GALLERY = [
   {
     category: 'doctors',
     label: 'Lekarka stomatolog uśmiechnięta',
-    url: 'https://images.unsplash.com/photo-1594824813589-980b1e427771?w=800&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&auto=format&fit=crop&q=80',
   },
   {
     category: 'doctors',
@@ -90,7 +90,7 @@ const PRESET_DENTAL_GALLERY = [
   {
     category: 'services',
     label: 'Protetyka, licówki & biały uśmiech',
-    url: 'https://images.unsplash.com/photo-1571772930225-397ae33ea75e?w=900&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=900&auto=format&fit=crop&q=80',
   },
   {
     category: 'services',
