@@ -16,4 +16,4 @@ services:
 networks:
   tunnel:
     external: true
-    name: NAZWA_SIECI_CLOUDFLARED   # np. cloudflare-tunnel_default
+    name: NAZWA_SIECI_CLOUDFLARED   # np. cloudflared_default
