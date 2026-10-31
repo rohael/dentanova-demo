@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Lokalne ustawienia serwera (wzór: docker-compose.override.example.yml)
+docker-compose.override.yml

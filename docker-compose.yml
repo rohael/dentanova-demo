@@ -4,6 +4,7 @@ services:
     image: dentanova-demo:latest
     container_name: dentanova-demo
     restart: unless-stopped
-    # Port tylko na localhost - na świat wystawia go Cloudflare Tunnel
+    # Domyślnie port tylko na localhost - na świat wystawia go Cloudflare Tunnel.
+    # Adres i port zmienisz w pliku .env (wzór: .env.example).
     ports:
-      - "127.0.0.1:8095:80"
+      - "${DENTANOVA_BIND:-127.0.0.1}:${DENTANOVA_PORT:-8095}:80"

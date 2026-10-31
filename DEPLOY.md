@@ -18,7 +18,32 @@ curl -I http://127.0.0.1:8095
 
 Powinno zwrócić `HTTP/1.1 200 OK`.
 
-## 2. Wystawienie na świat przez Cloudflare Tunnel
+## 2. Ustawienia lokalne (opcjonalnie)
+
+Repozytorium zawiera tylko wzory. Twoje prawdziwe ustawienia trzymasz w plikach, które są w `.gitignore`, więc `git pull` ich nie nadpisze, a `git push` ich nie wyśle.
+
+| Wzór w repo | Twój plik na serwerze | Do czego |
+| --- | --- | --- |
+| `.env.example` | `.env` | adres i port aplikacji |
+| `docker-compose.override.example.yml` | `docker-compose.override.yml` | dodatkowe sieci, np. dla Cloudflare Tunnel |
+
+### Dostęp z innych urządzeń w sieci lokalnej
+
+Domyślnie aplikacja nasłuchuje tylko na `127.0.0.1`. Żeby otworzyć ją z laptopa czy telefonu w tej samej sieci:
+
+```bash
+cp .env.example .env
+sed -i 's/^DENTANOVA_BIND=.*/DENTANOVA_BIND=0.0.0.0/' .env
+docker compose up -d
+```
+
+Potem: `http://<IP-serwera>:8095`.
+
+### Zajęty port
+
+Zmień `DENTANOVA_PORT` w `.env` i uruchom `docker compose up -d`.
+
+## 3. Wystawienie na świat przez Cloudflare Tunnel
 
 W panelu Cloudflare: **Zero Trust → Networks → Tunnels → (Twój tunel) → Public Hostname → Add a public hostname**:
 
@@ -30,15 +55,16 @@ W panelu Cloudflare: **Zero Trust → Networks → Tunnels → (Twój tunel) →
 | URL | zależnie od tego, jak działa `cloudflared` (poniżej) |
 
 - **`cloudflared` jako usługa systemowa** (zainstalowany na Ubuntu): URL = `localhost:8095`
-- **`cloudflared` jako kontener Docker**: dołącz oba kontenery do wspólnej sieci i użyj URL = `dentanova-demo:80`:
+- **`cloudflared` jako kontener Docker**: podłącz aplikację do sieci kontenera `cloudflared` i użyj URL = `dentanova-demo:80`:
 
 ```bash
-docker network create web 2>/dev/null || true
-docker network connect web dentanova-demo
-docker network connect web <nazwa-kontenera-cloudflared>
+docker network ls                      # znajdź sieć cloudflared
+cp docker-compose.override.example.yml docker-compose.override.yml
+# w docker-compose.override.yml wpisz nazwę sieci zamiast NAZWA_SIECI_CLOUDFLARED
+docker compose up -d
 ```
 
-## 3. Aktualizacja po zmianach w kodzie
+## 4. Aktualizacja po zmianach w kodzie
 
 ```bash
 cd dentanova-demo

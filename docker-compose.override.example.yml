@@ -1,0 +1,19 @@
+# Wzór lokalnych ustawień Dockera (opcjonalny).
+# Skopiuj:  cp docker-compose.override.example.yml docker-compose.override.yml
+# Docker Compose wczyta docker-compose.override.yml automatycznie.
+# Plik docker-compose.override.yml jest w .gitignore - nie trafia do repozytorium.
+#
+# Przykład: podpięcie kontenera do sieci, w której działa kontener cloudflared.
+# Wtedy w Cloudflare (Public Hostname) ustawiasz URL: http://dentanova-demo:80
+# Nazwę sieci sprawdzisz poleceniem:  docker network ls
+
+services:
+  dentanova:
+    networks:
+      - default
+      - tunnel
+
+networks:
+  tunnel:
+    external: true
+    name: NAZWA_SIECI_CLOUDFLARED   # np. cloudflare-tunnel_default
