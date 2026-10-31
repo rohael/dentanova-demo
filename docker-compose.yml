@@ -1,0 +1,9 @@
+services:
+  dentanova:
+    build: .
+    image: dentanova-demo:latest
+    container_name: dentanova-demo
+    restart: unless-stopped
+    # Port tylko na localhost - na świat wystawia go Cloudflare Tunnel
+    ports:
+      - "127.0.0.1:8085:80"

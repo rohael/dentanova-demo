@@ -106,7 +106,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   // Obsługa logowania
   const handleLogin = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (passwordInput === 'admin123' || passwordInput === 'scs_sec_2026') {
+    if (passwordInput === 'admin123') {
       dentalStore.setAdminAuthenticated(true);
       setIsAuthenticated(true);
       setAuthError(null);
