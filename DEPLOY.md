@@ -13,7 +13,7 @@ docker compose up -d --build
 Sprawdzenie na serwerze:
 
 ```bash
-curl -I http://127.0.0.1:8085
+curl -I http://127.0.0.1:8095
 ```
 
 Powinno zwrócić `HTTP/1.1 200 OK`.
@@ -29,7 +29,7 @@ W panelu Cloudflare: **Zero Trust → Networks → Tunnels → (Twój tunel) →
 | Type | `HTTP` |
 | URL | zależnie od tego, jak działa `cloudflared` (poniżej) |
 
-- **`cloudflared` jako usługa systemowa** (zainstalowany na Ubuntu): URL = `localhost:8085`
+- **`cloudflared` jako usługa systemowa** (zainstalowany na Ubuntu): URL = `localhost:8095`
 - **`cloudflared` jako kontener Docker**: dołącz oba kontenery do wspólnej sieci i użyj URL = `dentanova-demo:80`:
 
 ```bash
