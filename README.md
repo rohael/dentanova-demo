@@ -2,6 +2,8 @@
 
 > **Projekt koncepcyjny.** Marka „DentaNova”, lekarze, pacjenci, adres i numery telefonów są fikcyjne. Zdjęcia pochodzą z Unsplash i grafik wygenerowanych na potrzeby demo.
 
+**🔗 Zobacz na żywo: [dentanova.rohaelarch.pl](https://dentanova.rohaelarch.pl)** · działa na moim homelabie (Docker + nginx + Cloudflare Tunnel)
+
 Szybki prototyp pokazujący, jak może wyglądać nowoczesna strona kliniki stomatologicznej z rezerwacją wizyt online i panelem dla personelu. Zbudowany metodą **AI-assisted development (vibe coding)**: architekturę, model danych i wymagania zaprojektowałem sam, kod powstał i został zweryfikowany z pomocą asystentów AI.
 
 ## Co potrafi
